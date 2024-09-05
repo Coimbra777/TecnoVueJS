@@ -8,7 +8,7 @@ const vm = new Vue({
     getProdutos() {
       fetch("./api/produtos.json").then((res) => {
         res.json().then((json) => {
-          // console.log(json);
+          console.log(json);
           this.produtos = json;
         });
       });
