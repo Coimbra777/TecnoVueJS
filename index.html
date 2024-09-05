@@ -10,7 +10,7 @@
   </head>
   <body>
     <div id="app">
-      <section class="modal" v-if="produto">
+      <section class="modal" v-if="modal" @click="modal = false">
         <div class="modal-container">
           <div class="modal-img">
             <img :src="produto.img" :alt="produto.nome" />
@@ -28,7 +28,10 @@
               </li>
             </ul>
           </div>
-          <button class="modal-btn" @click="produto = null">Adicionar</button>
+          <button class="modal-btn" @click="adicionarProduto()">
+            Adicionar
+          </button>
+          <button @click="modal = false" class="fechar-modal">X</button>
         </div>
       </section>
 

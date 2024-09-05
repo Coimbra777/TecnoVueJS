@@ -3,6 +3,7 @@ const vm = new Vue({
   data: {
     produtos: [],
     produto: {},
+    modal: false,
   },
   methods: {
     getProdutos() {
@@ -18,8 +19,12 @@ const vm = new Vue({
         res.json().then((json) => {
           console.log(json);
           this.produto = json;
+          this.modal = true;
         });
       });
+    },
+    adicionarProduto() {
+      console.log("Clicou no botão");
     },
   },
   filters: {
