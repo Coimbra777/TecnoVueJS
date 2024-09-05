@@ -10,12 +10,19 @@
   </head>
   <body>
     <div id="app">
-      <section class="produtos">
-        <div class="produto" v-for="produto in produtos" :key="produto.id">
-          <img :src="produto.img" :alt="produto.nome" class="img-produto" />
+      <section class="modal">{{produto}}</section>
+
+      <section class="items">
+        <div
+          class="item"
+          v-for="item in produtos"
+          :key="item.id"
+          @click="getProduto(item.id)"
+        >
+          <img :src="item.img" :alt="item.nome" class="img-item" />
           <div>
-            <h1>{{ produto.nome }}</h1>
-            <span>{{ produto.preco | precoProduto}}</span>
+            <h1>{{ item.nome }}</h1>
+            <span>{{ item.preco | precoItem}}</span>
           </div>
         </div>
       </section>

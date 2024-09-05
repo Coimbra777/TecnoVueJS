@@ -24,7 +24,7 @@ body {
   background: #faf6ed;
 }
 
-.produtos {
+.items {
   max-width: 100%;
   padding: 60px 60px;
   display: grid;
@@ -32,14 +32,14 @@ body {
   grid-gap: 20px;
 }
 
-.produto {
+.item {
   background: #fff;
   box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   padding: 20px;
 }
 
-.img-produto {
+.img-item {
   max-width: 100%;
   height: auto;
   display: block;

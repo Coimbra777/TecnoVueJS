@@ -2,19 +2,28 @@ const vm = new Vue({
   el: "#app",
   data: {
     produtos: [],
+    produto: {},
   },
   methods: {
     getProdutos() {
       fetch("./api/produtos.json").then((res) => {
-        console.log(res);
         res.json().then((json) => {
+          // console.log(json);
           this.produtos = json;
+        });
+      });
+    },
+    getProduto(id) {
+      fetch(`./api/produtos/${id}/dados.json`).then((res) => {
+        res.json().then((json) => {
+          console.log(json);
+          this.produto = json;
         });
       });
     },
   },
   filters: {
-    precoProduto(valor) {
+    precoItem(valor) {
       return valor.toLocaleString("pt-BR", {
         style: "currency",
         currency: "BRL",
@@ -23,6 +32,5 @@ const vm = new Vue({
   },
   created() {
     this.getProdutos();
-    console.log(this.produtos);
   },
 });
