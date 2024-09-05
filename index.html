@@ -15,7 +15,7 @@
           <img :src="produto.img" :alt="produto.nome" class="img-produto" />
           <div>
             <h1>{{ produto.nome }}</h1>
-            <span>R$ {{ produto.preco }}</span>
+            <span>{{ produto.preco | precoProduto}}</span>
           </div>
         </div>
       </section>

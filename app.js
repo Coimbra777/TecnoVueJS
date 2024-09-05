@@ -13,6 +13,14 @@ const vm = new Vue({
       });
     },
   },
+  filters: {
+    precoProduto(valor) {
+      return valor.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      });
+    },
+  },
   created() {
     this.getProdutos();
     console.log(this.produtos);
